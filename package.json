@@ -1,0 +1,29 @@
+{
+  "name": "github-token-exchanger",
+  "version": "1.0.0",
+  "description": "Exchanges the auth code from the GitHub API for a token.",
+  "main": "github-token-exchanger.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jimkang/github-token-exchanger.git"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "Jim Kang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimkang/github-token-exchanger/issues"
+  },
+  "homepage": "https://github.com/jimkang/github-token-exchanger",
+  "devDependencies": {},
+  "dependencies": {
+    "call-next-tick": "^1.1.2",
+    "log-format": "^1.0.0",
+    "request": "^2.79.0",
+    "restify": "^4.1.1",
+    "standard-bail": "^2.0.1"
+  }
+}
