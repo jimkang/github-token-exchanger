@@ -2,12 +2,17 @@ var config = require('./config');
 var sb = require('standard-bail')();
 var request = require('request');
 
-function exchange(code, done) {
+function exchange(code, useTestConfig, done) {
+  var githubConfig = config.github;
+  if (useTestConfig) {
+    githubConfig = config.githubTest;
+  }
+
   var reqOpts = {
     method: 'POST',
     url: 'https://github.com/login/oauth/access_token?' +
-      'client_id=' + config.github.clientId +
-      '&client_secret=' + config.github.clientSecret +
+      'client_id=' + githubConfig.clientId +
+      '&client_secret=' + githubConfig.clientSecret +
       '&code=' + code,
     json: true,
     headers: {

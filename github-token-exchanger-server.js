@@ -36,7 +36,7 @@ function respondHead(req, res, next) {
 
 function respondWithExchange(req, res, next) {
   if (req.query.code) {
-    exchange(req.query.code, writeToken);
+    exchange(req.query.code, req.query.test, writeToken);
   }
   else {
     next(new restify.InvalidArgumentError('Missing code param.'));
