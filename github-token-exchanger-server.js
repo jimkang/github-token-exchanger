@@ -45,6 +45,7 @@ function respondWithExchange(req, res, next) {
   function writeToken(error, token) {
     console.log('token:', token);
     if (error) {
+      console.log('error:', error);
       next(error);
     }
     else {

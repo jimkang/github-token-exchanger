@@ -7,6 +7,7 @@ function exchange(code, appName, done) {
   if (appName) {
     githubConfig = config[appName];
   }
+  console.log('code', code);
 
   var reqOpts = {
     method: 'POST',
@@ -31,6 +32,9 @@ function extractToken(res, body, done) {
 
   if (token) {
     done(null, token);
+  }
+  else if (body.error_description) {
+    done(new Error(body.error_description));
   }
   else {
     done(new Error('Could not get the token from GitHub.'));
