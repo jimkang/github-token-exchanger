@@ -2,10 +2,10 @@ var config = require('./config');
 var sb = require('standard-bail')();
 var request = require('request');
 
-function exchange(code, useTestConfig, done) {
+function exchange(code, appName, done) {
   var githubConfig = config.github;
-  if (useTestConfig) {
-    githubConfig = config.githubTest;
+  if (appName) {
+    githubConfig = config[appName];
   }
 
   var reqOpts = {
